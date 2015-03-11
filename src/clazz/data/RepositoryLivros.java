@@ -88,6 +88,14 @@ public class RepositoryLivros {
 		l9.setResumo("Epic!");
 		l9.setAnoPublicacao(2011);
 		livros.add(l9);
+		
+		Livro l10 = new EBook();
+		l10.setNome("SOA Aplicado");
+		l10.setAutores(Arrays.asList("Alexandre Saudate"));
+		l10.setEditora("Casa do Código");
+		l10.setResumo("Teste using JAXB");
+		l10.setAnoPublicacao(2012);
+		livros.add(l10);		
 	}	
 	
 	public List<Livro> listarLivros()

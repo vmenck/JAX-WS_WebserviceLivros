@@ -1,13 +1,19 @@
 package clazz.data;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementWrapper;
+import javax.xml.bind.annotation.XmlSeeAlso;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+
+import clazz.adaptor.DateAdaptor;
 
 @XmlAccessorType(XmlAccessType.FIELD)
+@XmlSeeAlso({EBook.class})
 public class Livro {
 	
 	private String nome;
@@ -22,7 +28,20 @@ public class Livro {
 	
 	private String resumo;
 	
+	@XmlJavaTypeAdapter(DateAdaptor.class)
+	private Date dataCriacao = new Date();
+	
 	public Livro(){}
+		
+	public Livro(String nome, List<String> autores, String editora,
+			Integer anoPublicacao, String resumo) {
+		super();
+		this.nome = nome;
+		this.autores = autores;
+		this.editora = editora;
+		this.anoPublicacao = anoPublicacao;
+		this.resumo = resumo;
+	}
 
 	public String getNome() {
 		return nome;
@@ -64,4 +83,11 @@ public class Livro {
 		this.resumo = resumo;
 	}
 
+	public Date getDataCriacao() {
+		return dataCriacao;
+	}
+
+	public void setDataCriacao(Date dataCriacao) {
+		this.dataCriacao = dataCriacao;
+	}
 }

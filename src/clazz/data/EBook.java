@@ -3,7 +3,7 @@ package clazz.data;
 import java.util.List;
 
 public class EBook extends Livro {
-	private String formato = "PDF";
+	private FormatEBook formato = FormatEBook.PDF;
 
 	public EBook() {
 		super();
@@ -14,11 +14,11 @@ public class EBook extends Livro {
 		super(nome,autores,editora,anoPublicacao,resumo);
 	}
 
-	public String getFormato() {
+	public FormatEBook getFormato() {
 		return formato;
 	}
 
-	public void setFormato(String formato) {
+	public void setFormato(FormatEBook formato) {
 		this.formato = formato;
 	}
 

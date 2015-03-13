@@ -21,7 +21,7 @@ public class Livro {
 	
 	@XmlElementWrapper(name="autores")
 	@XmlElement(name="autor")
-	@XmlJavaTypeAdapter(value=AdaptorAutores.class)
+	//@XmlJavaTypeAdapter(value=AdaptorAutores.class)
 	private List<Autor> autores;
 	
 	private String editora;

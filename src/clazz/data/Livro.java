@@ -10,6 +10,7 @@ import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
+import clazz.adaptor.AdaptorAutores;
 import clazz.adaptor.DateAdaptor;
 
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -20,6 +21,7 @@ public class Livro {
 	
 	@XmlElementWrapper(name="autores")
 	@XmlElement(name="autor")
+	@XmlJavaTypeAdapter(value=AdaptorAutores.class)
 	private List<Autor> autores;
 	
 	private String editora;

@@ -20,7 +20,7 @@ public class Livro {
 	
 	@XmlElementWrapper(name="autores")
 	@XmlElement(name="autor")
-	private List<String> autores;
+	private List<Autor> autores;
 	
 	private String editora;
 	
@@ -33,7 +33,7 @@ public class Livro {
 	
 	public Livro(){}
 		
-	public Livro(String nome, List<String> autores, String editora,
+	public Livro(String nome, List<Autor> autores, String editora,
 			Integer anoPublicacao, String resumo) {
 		super();
 		this.nome = nome;
@@ -51,11 +51,11 @@ public class Livro {
 		this.nome = nome;
 	}
 
-	public List<String> getAutores() {
+	public List<Autor> getAutores() {
 		return autores;
 	}
 
-	public void setAutores(List<String> autores) {
+	public void setAutores(List<Autor> autores) {
 		this.autores = autores;
 	}
 

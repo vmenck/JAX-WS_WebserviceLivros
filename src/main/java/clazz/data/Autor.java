@@ -11,7 +11,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlTransient;
 
-import com.sun.xml.internal.txw2.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElement;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Autor {
@@ -49,13 +49,13 @@ public class Autor {
 	}
 	
 	@XmlElementWrapper(name="refs")
-	@XmlElement("ref")
+	@XmlElement(name="ref")
 	public List<URL> getRefs() throws MalformedURLException
 	{
 		List<URL> list = new ArrayList<URL>();
-		list.add(new URL("www.submarino.com.br"));
-		list.add(new URL("www.saraiva.com.br"));
-		list.add(new URL("www.americanas.com.br"));
+		list.add(new URL("http://www.submarino.com.br"));
+		list.add(new URL("http://www.saraiva.com.br"));
+		list.add(new URL("http://www.americanas.com.br"));
 		
 		return list;
 	}
